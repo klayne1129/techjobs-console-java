@@ -60,13 +60,15 @@ public class TechJobs {
                 // What is their search term?
                 System.out.println("\nSearch term: ");
                 String searchTerm = in.nextLine();
+                ArrayList<HashMap<String, String>> aMatch  = JobData.findByValue(searchTerm);
 
                 if (searchField.equals("all")) {
-                    ArrayList<HashMap<String, String>> aMatch  = JobData.findByValue(searchTerm);
+                    //ArrayList<HashMap<String, String>> aMatch  = JobData.findByValue(searchTerm);
 
                     printJobs(aMatch);
 
                 } else {
+
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
             }
@@ -120,7 +122,7 @@ public class TechJobs {
             //iterates through each object in the arrayList
             for (HashMap<String, String> jobs : someJobs){
 
-                System.out.println("******");
+                System.out.println("******"); //decor separating jobs
                 // iterates through each map.
                 //NOTE: The class Map.Entry is specifically constructed to-
                 // be used in this fashion, to represent key/value pairs within HashMaps.
@@ -129,9 +131,9 @@ public class TechJobs {
                         System.out.println(job.getKey() + ": " + job.getValue());
                 }
             }
-
+            System.out.println("******"); //last decor line
         } else{
-            System.out.println("printJobs is not implemented yet");
+            System.out.println("No results.");
         }
     }
 
