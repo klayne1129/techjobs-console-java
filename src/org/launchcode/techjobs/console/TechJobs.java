@@ -60,10 +60,10 @@ public class TechJobs {
                 // What is their search term?
                 System.out.println("\nSearch term: ");
                 String searchTerm = in.nextLine();
-                ArrayList<HashMap<String, String>> aMatch  = JobData.findByValue(searchTerm);
+
 
                 if (searchField.equals("all")) {
-                    //ArrayList<HashMap<String, String>> aMatch  = JobData.findByValue(searchTerm);
+                    ArrayList<HashMap<String, String>> aMatch  = JobData.findByValue(searchTerm);
 
                     printJobs(aMatch);
 
@@ -130,8 +130,9 @@ public class TechJobs {
 
                         System.out.println(job.getKey() + ": " + job.getValue());
                 }
+                System.out.println("******\n"); //last decor line
             }
-            System.out.println("******"); //last decor line
+
         } else{
             System.out.println("No results.");
         }
